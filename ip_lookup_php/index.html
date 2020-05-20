@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IP Lookup in PHP – ipapi – ipapi.co - IP Location for the pro !</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="A collection of PHP code snippets to get real time information (like location, currency, timezone etc.) for an IP address.
+
+§ Find location of IP address in PHP
+
+    Get the geolocation (geographic location) of an IP address with an API. The example below uses json as the output format. To switch to a different format, replace json in the URL path below with other supported formats like csv, xml, yaml &amp; jsonp.
+
+
+" />
+    <meta property="og:description" content="A collection of PHP code snippets to get real time information (like location, currency, timezone etc.) for an IP address.
+
+§ Find location of IP address in PHP
+
+    Get the geolocation (geographic location) of an IP address with an API. The example below uses json as the output format. To switch to a different format, replace json in the URL path below with other supported formats like csv, xml, yaml &amp; jsonp.
+
+
+" />
+    
+    <meta name="author" content="ipapi" />
+
+    
+    <meta property="og:title" content="IP Lookup in PHP" />
+    <meta property="twitter:title" content="IP Lookup in PHP" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="ipapi - ipapi.co - IP Location for the pro !" href="/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="https://ipapi.co/" class="site-avatar"><img src="https://ipapi.co/static/images/icon/icon-48.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="https://ipapi.co/">ipapi</a></h1>
+            <p class="site-description">ipapi.co - IP Location for the pro !</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="https://ipapi.co/contact/">Contact</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>IP Lookup in PHP</h1>
+
+  <div class="entry">
+    <p>A collection of PHP code snippets to get real time information (like location, currency, timezone etc.) for an IP address.
+<br /><br /></p>
+<h4 id="-find-location-of-ip-address-in-php">§ <a href="#-find-location-of-ip-address-in-php">Find location of IP address in PHP</a></h4>
+<p><span class="code-description">
+    Get the geolocation (geographic location) of an IP address with an API. The example below uses <code class="highlighter-rouge">json</code> as the output format. To switch to a different format, replace <code class="highlighter-rouge">json</code> in the URL path below with other supported formats like <code class="highlighter-rouge">csv</code>, <code class="highlighter-rouge">xml</code>, <code class="highlighter-rouge">yaml</code> &amp; <code class="highlighter-rouge">jsonp</code>.
+</span></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ip</span>  <span class="o">=</span> <span class="s1">'8.8.8.8'</span><span class="p">;</span>
+<span class="nv">$loc</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/'</span><span class="o">.</span><span class="nv">$ip</span><span class="o">.</span><span class="s1">'/json/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$loc</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><span class="code-output">Output</span></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.8.8.8"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mountain View"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"continent_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"in_eu"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94035"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.386</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.0838</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utc_offset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-0700"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country_calling_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"languages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US,es-US,haw,fr"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"asn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AS15169"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"org"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Google LLC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-city-of-ip-address-in-php">§ <a href="#-find-city-of-ip-address-in-php">Find city of IP address in PHP</a></h4>
+<p><span class="code-description">
+    If all you need is the city of an IP address, you can use the <code class="highlighter-rouge">city</code> endpoint as shown in the example below. The output is a text string with the city name. 
+</span></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/city/'</span><span class="p">);</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rhinelander
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-postal-code-of-ip-address-in-php">§ <a href="#-find-postal-code-of-ip-address-in-php">Find postal code of IP address in PHP</a></h4>
+<p><span class="code-description">
+    Similarly, you can find the postal code (zip code) as shown below. The output is a text string indicating the postal code. 
+</span></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/postal/'</span><span class="p">);</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>54501
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-state--region--region-code-of-ip-address-in-php">§ <a href="#-find-state--region--region-code-of-ip-address-in-php">Find state / region / region code of IP address in PHP</a></h4>
+<p><span class="code-description">
+    To find the region name (state) or region code, you can use the following example.
+</span></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$region</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/region/'</span><span class="p">);</span>
+<span class="nv">$region_code</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/region_code/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$region</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$region_code</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wisconsin
+WI
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-country--country-code-of-ip-address-in-php">§ <a href="#-find-country--country-code-of-ip-address-in-php">Find country / country code of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$country_name</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/country_name/'</span><span class="p">);</span>
+<span class="nv">$country</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/country/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$country_name</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$country</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>United States
+US
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-continent-code-of-ip-address-in-php">§ <a href="#-find-continent-code-of-ip-address-in-php">Find continent code of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$continent_code</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/continent_code/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$continent_code</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NA
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-latitude--longitude-of-ip-address-in-php">§ <a href="#-find-latitude--longitude-of-ip-address-in-php">Find latitude / longitude of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$latitude</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/latitude/'</span><span class="p">);</span>
+<span class="nv">$longitude</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/longitude/'</span><span class="p">);</span>
+<span class="nv">$latlong</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/latlong/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$latitude</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$longitude</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$latlong</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>45.704500
+-89.386600
+45.704500,-89.386600
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-timezone-of-ip-address-in-php">§ <a href="#-find-timezone-of-ip-address-in-php">Find timezone of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$timezone</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/timezone/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$timezone</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>America/Chicago
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-utc-offset-of-ip-address-in-php">§ <a href="#-find-utc-offset-of-ip-address-in-php">Find UTC offset of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$utc_offset</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/utc_offset/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$utc_offset</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// automatically adjusts with daylight saving time
+-0500
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-country-calling-code-of-ip-address-in-php">§ <a href="#-find-country-calling-code-of-ip-address-in-php">Find country calling code of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$country_calling_code</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/country_calling_code/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$country_calling_code</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+1
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-currency-of-ip-address-in-php">§ <a href="#-find-currency-of-ip-address-in-php">Find currency of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$currency</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/currency/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$currency</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>USD
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-common-languages-spoken-at-the-location-of-an-ip-address">§ <a href="#-find-common-languages-spoken-at-the-location-of-an-ip-address">Find common languages spoken at the location of an IP address</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$languages</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/languages/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$languages</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>en-US,es-US,haw,fr
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-if-ip-address-is-in-eu--europe">§ <a href="#-find-if-ip-address-is-in-eu--europe">Find if IP address is in EU / Europe</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$in_eu</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/in_eu/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$in_eu</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-asn-of-ip-address-in-php">§ <a href="#-find-asn-of-ip-address-in-php">Find ASN of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$asn</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/asn/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$asn</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// ASN : autonomous system number
+AS5650
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-organization-of-ip-address-in-php">§ <a href="#-find-organization-of-ip-address-in-php">Find organization of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$org</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/50.50.50.50/org/'</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$org</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Frontier Communications of America, Inc.
+</code></pre></div></div>
+<p><br /></p>
+
+<h4 id="-find-city-state-and-country-of-ip-address-in-php">§ <a href="#-find-city-state-and-country-of-ip-address-in-php">Find city, state and country of IP address in PHP</a></h4>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ip</span>  <span class="o">=</span> <span class="s1">'8.8.8.8'</span><span class="p">;</span>
+<span class="nv">$loc</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://ipapi.co/'</span><span class="o">.</span><span class="nv">$ip</span><span class="o">.</span><span class="s1">'/json/'</span><span class="p">);</span>
+<span class="nv">$obj</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$loc</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">city</span><span class="o">.</span><span class="s2">", "</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">region</span><span class="o">.</span><span class="s2">", "</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">country_name</span><span class="p">;</span>
+</code></pre></div></div>
+<p><span class="code-output">Output</span></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mountain View, California, United States
+</code></pre></div></div>
+
+<p><br /><br /><br /><br /><br /></p>
+
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+
+
+
+<a href="https://github.com/ipapi-co/ipapi"><i class="svg-icon github"></i></a>
+
+
+
+
+<a href="https://www.twitter.com/ipapi_co"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-76816797-2', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/ip_lookup_php/',
+		  'title': 'IP Lookup in PHP'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>
